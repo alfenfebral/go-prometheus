@@ -1,0 +1,12 @@
+groups:
+  - name: DemoAlerts
+    rules:
+      - alert: Prometheus Instance Down 
+        expr: up{job="prometheus"} < 1 
+        for: 5m
+      - alert: Node Instance Down 
+        expr: up{job="node"} < 1 
+        for: 5m
+      - alert: Book Service Instance Down 
+        expr: up{job="book-service"} < 1 
+        for: 5m
